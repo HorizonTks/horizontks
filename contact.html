@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Horizon Technologys</title>
+  <style>
+    :root {
+      --bg:          #eef7ee;
+      --text:        #1a1a1a;
+      --accent:      #3b4db8;
+      --accent-em:   #2a8c5c;
+      --nav-bg:      #ffffff;
+      --nav-border:  #d0e6d0;
+      --divider:     #c8e0c8;
+      --muted:       #4a5a4a;
+      --card-bg:     #f5fcf5;
+      --card-border: #d0e8d0;
+      --input-border:#b8d8b8;
+      --input-focus: #3b4db8;
+      --error:       #c0392b;
+      --success-bg:  #e8f8ee;
+      --success-bd:  #a0d4b0;
+      --success-txt: #1a6638;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent-em);
+      font-style: italic;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── GREEK KEY BORDER ── */
+    .greek-key-border { display: block; line-height: 0; width: 100%; position: sticky; top: 56px; z-index: 99; background-color: var(--bg); }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      text-align: center;
+    }
+
+    .page-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-em);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+    .page-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 40px 40px 36px;
+      text-align: left;
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 7px;
+      letter-spacing: 0.02em;
+    }
+    label .required {
+      color: var(--accent);
+      margin-left: 2px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 11px 14px;
+      font-family: inherit;
+      font-size: 0.97rem;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--input-border);
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: var(--input-focus);
+      box-shadow: 0 0 0 3px rgba(59, 77, 184, 0.1);
+    }
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+      line-height: 1.65;
+    }
+
+    /* ── SUBMIT ── */
+    .submit-row {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    button[type="submit"] {
+      padding: 13px 32px;
+      background: var(--accent);
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.1s;
+    }
+    button[type="submit"]:hover { background: #2f3da0; }
+    button[type="submit"]:active { transform: scale(0.98); }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── FEEDBACK MESSAGES ── */
+    .feedback {
+      display: none;
+      margin-top: 24px;
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 0.93rem;
+      font-weight: 500;
+      text-align: left;
+    }
+    .feedback.success {
+      display: block;
+      background: var(--success-bg);
+      border: 1px solid var(--success-bd);
+      color: var(--success-txt);
+    }
+    .feedback.error {
+      display: block;
+      background: #fdf0ef;
+      border: 1px solid #e8b4b0;
+      color: var(--error);
+    }
+
+    /* Field-level error hints */
+    .field-error {
+      display: none;
+      font-size: 0.78rem;
+      color: var(--error);
+      margin-top: 5px;
+    }
+    .field.invalid input,
+    .field.invalid textarea { border-color: var(--error); }
+    .field.invalid .field-error { display: block; }
+
+    /* ── DIVIDER ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 44px auto;
+      width: 60%;
+    }
+
+    /* ── DIRECT CONTACT ── */
+    .direct-contact { text-align: center; }
+    .direct-contact p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .direct-contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .direct-contact a:hover { text-decoration: underline; }
+    .direct-contact .signature {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--nav-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tomorrow&#8217;s Technology Today!</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="whoweare.html">Who We Are</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- GREEK KEY BORDER -->
+  <div class="greek-key-border" aria-hidden="true">
+    <svg width="100%" height="8" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="meander" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+          <path d="M 0,5 H 1 V 1 H 7 V 7 H 2 V 3 H 5 V 5 H 8"
+                fill="none" stroke="#1a1a1a" stroke-width="0.75"
+                stroke-linecap="square" stroke-linejoin="miter"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="8" fill="url(#meander)"/>
+    </svg>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+
+    <h1>Start a Conversation</h1>
+    <p class="page-sub"><i>
+      (If the question of AI alignment lands for you, I welcome the dialogue.)</i>
+    </p>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <form id="contactForm" novalidate>
+
+        <div class="field" id="field-name">
+          <label for="name">Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" />
+          <span class="field-error">Please enter your name.</span>
+        </div>
+
+        <div class="field" id="field-email">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+          <span class="field-error">Please enter a valid email address.</span>
+        </div>
+
+        <div class="field" id="field-message">
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea id="message" name="message" placeholder="Share what's on your mind…"></textarea>
+          <span class="field-error">Please enter a message.</span>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit">Send Message</button>
+          <span class="form-note">Fields marked <span style="color:var(--accent)">*</span> are required.</span>
+        </div>
+
+        <div id="formFeedback" class="feedback"></div>
+
+      </form>
+    </div>
+
+    <hr>
+
+    <!-- DIRECT CONTACT -->
+    <div class="direct-contact">
+      <p>Prefer direct contact?</p>
+      <p><a href="mailto:Robert@horizontks.com">Robert@horizontks.com</a></p>
+      <p><a href="tel:7703672327">770.367.2327</a></p>
+      <p class="signature">Robert E Miller</p>
+      <p style="font-size:0.85rem; color:var(--muted);">Founder &amp; Principal Consultant, Horizon Technologys</p>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; Horizon Technologys. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+
+    function validateEmail(val) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+    }
+
+    function setField(id, valid) {
+      const el = document.getElementById('field-' + id);
+      if (valid) { el.classList.remove('invalid'); }
+      else        { el.classList.add('invalid'); }
+      return valid;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      feedback.className = 'feedback';
+      feedback.textContent = '';
+
+      let valid = true;
+      valid = setField('name',    name.length > 0)    && valid;
+      valid = setField('email',   validateEmail(email)) && valid;
+      valid = setField('message', message.length > 0)  && valid;
+
+      if (!valid) {
+        feedback.className = 'feedback error';
+        feedback.textContent = 'Please correct the highlighted fields before sending.';
+        return;
+      }
+
+      // Build mailto link and open
+      const subject = encodeURIComponent('Message from ' + name + ' via Horizon Website');
+      const body    = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        'Message:\n' + message
+      );
+
+      const mailto = 'mailto:Robert@horizontks.com'
+                   + '?subject=' + subject
+                   + '&body='    + body;
+
+      window.location.href = mailto;
+
+      // Optimistic confirmation
+      feedback.className = 'feedback success';
+      feedback.textContent =
+        'Your message has been prepared in your email client. ' +
+        'Please click Send to deliver it to Robert. Thank you!';
+
+      form.reset();
+      ['name','email','message'].forEach(function(id) {
+        setField(id, true);
+      });
+    });
+  </script>
+
+</body>
+</html>

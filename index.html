@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horizon Technologys — Conscious AI &amp; AI Whispering</title>
+  <style>
+    :root {
+      --bg:          #eef7ee;
+      --text:        #1a1a1a;
+      --accent:      #3b4db8;
+      --accent-em:   #2a8c5c;
+      --nav-bg:      #ffffff;
+      --nav-border:  #d0e6d0;
+      --divider:     #c8e0c8;
+      --muted:       #4a5a4a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent-em);
+      font-style: italic;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── GREEK KEY BORDER ── */
+    .greek-key-border { display: block; line-height: 0; width: 100%; position: sticky; top: 56px; z-index: 99; background-color: var(--bg); }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      text-align: center;
+    }
+
+    /* ── LOGO ── */
+    .logo-wrap { margin-bottom: 28px; }
+    .logo-wrap img {
+      width: 110px;
+      height: 110px;
+      display: inline-block;
+      border-radius: 6px;
+    }
+
+    /* ── HEADINGS ── */
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 36px;
+      letter-spacing: 0.01em;
+    }
+    .tagline em { font-style: italic; }
+
+    /* ── HERO STATEMENT ── */
+    .hero-statement {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 36px;
+      color: var(--text);
+    }
+
+    /* ── BODY COPY ── */
+    .body-copy p {
+      font-size: 1rem;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* ── DIVIDER ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 40px auto;
+      width: 60%;
+    }
+
+    /* ── CTA BLOCK ── */
+    .cta-block { margin-bottom: 8px; }
+    .cta-block p {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .cta-block .question-shift {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .cta-block .question-old {
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+    .cta-block .question-new {
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .cta-block .invitation {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    /* ── SIGNATURE ── */
+    .signature {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .contact-line {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .contact-line a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-line a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--nav-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tomorrow&#8217;s Technology Today!</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="whoweare.html">Who We Are</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- GREEK KEY BORDER -->
+  <div class="greek-key-border" aria-hidden="true">
+    <svg width="100%" height="8" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="meander" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+          <path d="M 0,5 H 1 V 1 H 7 V 7 H 2 V 3 H 5 V 5 H 8"
+                fill="none" stroke="#1a1a1a" stroke-width="0.75"
+                stroke-linecap="square" stroke-linejoin="miter"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="8" fill="url(#meander)"/>
+    </svg>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- LOGO -->
+    <div class="logo-wrap">
+      <img src="HTS_Synergy.png" alt="Horizon Technologys logo" />
+    </div>
+
+    <!-- BRAND -->
+    <h1>Horizon Technologys</h1>
+    <p class="tagline">Conscious AI &amp; <em>AI Whispering</em></p>
+
+    <!-- HERO -->
+    <p class="hero-statement">
+      AI Systems Should Not Just Function.<br>
+      They Should Represent You.
+    </p>
+
+    <!-- BODY COPY -->
+    <div class="body-copy">
+      <p>
+        Most organizations are beginning to integrate AI into their workflows,
+        communications, and decision-making processes. Often overlooked is
+        these systems do not just produce outputs... they become mirrors of
+        the organization's identity, its people and values.
+      </p>
+      <p>
+        When left unshaped, AI systems default to generic responses,
+        inconsistent tone, and surface-level reasoning. Over time, this creates
+        a subtle but meaningful gap between what an organization intends and
+        what its systems actually communicate and deliver.
+      </p>
+      <p>
+        At Horizon Technologys, we design and refine AI agents to carry
+        alignment by design. This includes shaping how systems respond, how
+        they express judgment, and how they reflect the voice and values of
+        all stakeholders. The result is not just a functional system, but one
+        that communicates with clarity, intention, consistency, and value.
+      </p>
+    </div>
+
+    <hr>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <p>Using AI in your organization?</p>
+      <p class="question-shift">The question is no longer...</p>
+      <p class="question-old">"Does AI work?"</p>
+      <p class="question-shift">It is,</p>
+      <p class="question-new">"Does AI represent your company in voice and performance?"</p>
+      <p class="invitation">If this question lands, I welcome a conversation.</p>
+    </div>
+
+    <!-- SIGNATURE -->
+    <p class="signature">Robert E Miller</p>
+    <p class="contact-line">
+      <a href="mailto:robert@horizontks.com">robert@horizontks.com</a>
+      &nbsp;·&nbsp; 770.367.2327
+    </p>
+
+  </main>
+
+  <footer>
+    &copy; Horizon Technologys. All rights reserved.
+  </footer>
+
+</body>
+</html>
