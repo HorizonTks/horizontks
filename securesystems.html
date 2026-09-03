@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Systems — Horizon Technologys</title>
+  <style>
+    :root {
+      --bg:          #eef7ee;
+      --text:        #1a1a1a;
+      --accent:      #3b4db8;
+      --accent-em:   #2a8c5c;
+      --nav-bg:      #ffffff;
+      --nav-border:  #d0e6d0;
+      --divider:     #c8e0c8;
+      --muted:       #4a5a4a;
+      --card-bg:     #f5fcf5;
+      --card-border: #d0e8d0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent-em);
+      font-style: italic;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── GREEK KEY BORDER ── */
+    .greek-key-border {
+      display: block;
+      line-height: 0;
+      width: 100%;
+      position: sticky;
+      top: 56px;
+      z-index: 99;
+      background-color: var(--bg);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .page-sub {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+      margin-top: 8px;
+    }
+
+    .pillar {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      padding: 20px 24px;
+    }
+
+    .pillar h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .pillar p {
+      font-size: 0.93rem;
+      text-align: left;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .services-list {
+      list-style: none;
+      margin-top: 12px;
+      text-align: left;
+    }
+
+    .services-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--divider);
+      font-size: 0.96rem;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .services-list li:last-child { border-bottom: none; }
+
+    .services-list li::before {
+      content: "→";
+      color: var(--accent-em);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    blockquote {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 28px 32px;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin: 0 0 16px;
+      text-align: center;
+      line-height: 1.50;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 44px auto;
+      width: 60%;
+    }
+
+    .signature {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .contact-line {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-line a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-line a:hover { text-decoration: underline; }
+
+    .cta-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+    }
+
+    .cta-link:hover { background: #2f3da0; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--nav-border);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV — intentionally unchanged -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tomorrow&#8217;s Technology Today!</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="whoweare.html">Who We Are</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- GREEK KEY BORDER -->
+  <div class="greek-key-border" aria-hidden="true">
+    <svg width="100%" height="8" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="meander" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+          <path d="M 0,5 H 1 V 1 H 7 V 7 H 2 V 3 H 5 V 5 H 8"
+                fill="none" stroke="#1a1a1a" stroke-width="0.75"
+                stroke-linecap="square" stroke-linejoin="miter"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="8" fill="url(#meander)"/>
+    </svg>
+  </div>
+
+  <main>
+
+    <h1>Secure Systems. Secure Information. Secure Organizations.</h1>
+    <p class="page-sub">Cybersecurity Consulting from Horizon Technologys</p>
+
+    <section>
+      <p class="lead">
+        Technology has changed enormously. So has the meaning of security.
+      </p>
+      <p>
+        Cybersecurity today is no longer simply a matter of protecting a network perimeter,
+        installing the right technology, or responding when something goes wrong.
+      </p>
+      <p>
+        Organizations now operate across cloud platforms, distributed workforces,
+        interconnected vendors, AI-enabled systems, sensitive data environments,
+        and rapidly changing regulatory expectations.
+      </p>
+      <p>
+        Security must become part of how an organization thinks, governs, makes decisions,
+        manages risk, introduces new technology, and prepares for what happens next.
+      </p>
+      <p><strong>That is where Horizon Technologys begins.</strong></p>
+    </section>
+
+    <section>
+      <h2>Security Starts with Understanding the Organization</h2>
+      <p>
+        Horizon Technologys has always approached technology from a business perspective first.
+        Before recommending controls, platforms, policies, or remediation, we work to understand
+        the organization itself: what it does, what information matters most, where risk exists,
+        how decisions are made, and what must be protected for the organization to operate successfully.
+      </p>
+      <p>
+        A cybersecurity program should support the business rather than exist alongside it.
+      </p>
+      <p>
+        Our consulting engagements can begin with a focused cybersecurity and organizational risk
+        assessment designed to establish the current environment, identify meaningful vulnerabilities
+        and governance gaps, and determine practical priorities.
+      </p>
+
+      <ul class="services-list">
+        <li>Cybersecurity governance and policy review</li>
+        <li>Organizational risk and security assessments</li>
+        <li>AI and Generative AI governance</li>
+        <li>Data protection and information-handling practices</li>
+        <li>Identity and access-management review</li>
+        <li>Third-party and technology-vendor risk</li>
+        <li>Incident preparedness and response planning</li>
+        <li>Ransomware resilience and recovery readiness</li>
+        <li>Security awareness and organizational practices</li>
+        <li>Alignment with contemporary cybersecurity and AI risk frameworks</li>
+        <li>Executive and management cybersecurity guidance</li>
+      </ul>
+
+      <p style="margin-top:22px;">
+        The objective is not to produce another document that sits on a shelf.
+        It is to help create a security environment people can actually understand,
+        manage, and sustain.
+      </p>
+    </section>
+
+    <section>
+      <h2>Cybersecurity Is Increasingly a Governance Issue</h2>
+      <p>
+        Some of the most consequential security decisions are no longer made inside an IT department.
+        They occur when an organization selects a technology vendor, introduces an AI application,
+        grants access to sensitive information, changes a business process, responds to a regulatory
+        requirement, or decides how much risk it is willing to accept.
+      </p>
+      <p>
+        Horizon helps organizations connect cybersecurity policy with business objectives,
+        organizational culture, operational reality, regulatory expectations, and emerging technology.
+      </p>
+      <p>
+        Where appropriate, our work can draw upon established approaches such as the
+        NIST Cybersecurity Framework 2.0 and related cybersecurity and AI risk-management guidance.
+      </p>
+      <p><strong>The purpose is not compliance for compliance's sake. The purpose is better decisions.</strong></p>
+    </section>
+
+    <section>
+      <h2>AI Has Changed the Security Conversation</h2>
+      <p>
+        Artificial intelligence introduces extraordinary opportunities—and an entirely new category
+        of questions.
+      </p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <h3>What AI Systems Are Being Used?</h3>
+          <p>Organizations need visibility into which AI applications are in use, who is using them, and where they are entering critical workflows.</p>
+        </div>
+
+        <div class="pillar">
+          <h3>What Information Is Being Shared?</h3>
+          <p>Employees may place proprietary, customer, operational, or regulated information into AI systems without clear organizational rules or safeguards.</p>
+        </div>
+
+        <div class="pillar">
+          <h3>Who Approves New Uses?</h3>
+          <p>AI adoption creates questions of vendor evaluation, access, accountability, governance, and who has authority to approve new uses.</p>
+        </div>
+
+        <div class="pillar">
+          <h3>What Happens When Something Goes Wrong?</h3>
+          <p>Organizations need to consider unexpected outputs, exposure of sensitive information, vendor failures, and the consequences of AI becoming part of a critical business process.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:22px;">
+        These questions sit at the intersection of cybersecurity, governance, technology,
+        policy, risk, and human behavior.
+      </p>
+      <p>
+        Horizon Technologys helps clients establish practical approaches for governing emerging
+        technologies without unnecessarily preventing the innovation that makes those technologies valuable.
+      </p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Technology Matters. People Matter More.</h2>
+      <p>
+        Security failures rarely belong exclusively to hardware or software.
+        They emerge from the interaction among technology, policy, organizational structure,
+        vendors, incentives, processes, communication, and human decisions.
+      </p>
+      <p>
+        Our role is not simply to identify what can go wrong. It is to work collaboratively with
+        client leadership, technology professionals, security teams, operational staff, and other
+        stakeholders to determine what should happen instead—and help make it achievable.
+      </p>
+
+      <ul class="services-list">
+        <li>Strengthen an existing cybersecurity program</li>
+        <li>Prepare an organization for AI adoption</li>
+        <li>Examine a troubling area of risk before it becomes an incident</li>
+        <li>Give leadership an experienced, independent perspective on security and organizational risk</li>
+      </ul>
+
+      <blockquote style="margin-top:24px;">
+        Are we protecting the things that matter, in ways that make sense for the organization we have become?
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>Experience That Evolves with the Technology</h2>
+      <p>
+        Horizon Technologys has spent decades helping organizations understand and use technology effectively.
+        The technologies have changed. The underlying consulting discipline has not.
+      </p>
+      <p>
+        Listen carefully. Understand the environment. Identify what matters. Bring the right people together.
+        Separate genuine risk from noise. Design solutions appropriate to the organization. And leave the client
+        stronger and more capable than when the engagement began.
+      </p>
+      <p><strong>Cybersecurity is not a product. It is an organizational capability.</strong></p>
+      <p>And building that capability is work we understand.</p>
+    </section>
+
+    <a href="contact.html" class="cta-link">Start a Conversation</a>
+
+    <hr>
+
+    <p class="signature">Robert E Miller</p>
+    <p class="contact-line">
+      Systems Architect &nbsp;·&nbsp; Agentic AI Expert &nbsp;·&nbsp; AI Transformation Consultant
+    </p>
+    <p class="contact-line">
+      <a href="mailto:robert@horizontks.com">robert@horizontks.com</a>
+      &nbsp;·&nbsp; 770.367.2327
+    </p>
+
+  </main>
+
+  <footer>
+    &copy; Horizon Technologys. All rights reserved.
+  </footer>
+
+</body>
+</html>
