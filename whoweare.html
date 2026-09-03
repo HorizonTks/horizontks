@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who We Are — Horizon Technologys</title>
+  <style>
+    :root {
+      --bg:          #eef7ee;
+      --text:        #1a1a1a;
+      --accent:      #3b4db8;
+      --accent-em:   #2a8c5c;
+      --nav-bg:      #ffffff;
+      --nav-border:  #d0e6d0;
+      --divider:     #c8e0c8;
+      --muted:       #4a5a4a;
+      --card-bg:     #f5fcf5;
+      --card-border: #d0e8d0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent-em);
+      font-style: italic;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── GREEK KEY BORDER ── */
+    .greek-key-border { display: block; line-height: 0; width: 100%; position: sticky; top: 56px; z-index: 99; background-color: var(--bg); }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      text-align: center;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-em);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+    .page-sub {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+
+    /* ── SECTION ── */
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    /* ── PILLAR CARDS ── */
+    .pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+      margin-top: 8px;
+    }
+    .pillar {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      padding: 20px 24px;
+    }
+    .pillar h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .pillar p {
+      font-size: 0.93rem;
+      text-align: left;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    /* ── SERVICES LIST ── */
+    .services-list {
+      list-style: none;
+      margin-top: 12px;
+      text-align: left;
+    }
+    .services-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--divider);
+      font-size: 0.96rem;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .services-list li:last-child { border-bottom: none; }
+    .services-list li::before {
+      content: "→";
+      color: var(--accent-em);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── QUOTE BLOCK ── */
+    blockquote {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 28px 32px;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin: 0 0 16px;
+      text-align: center;
+      line-height: 1.50;
+    }
+    blockquote span {
+      display: block;
+      margin-top: 14px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 44px auto;
+      width: 60%;
+    }
+
+    /* ── SIGNATURE ── */
+    .signature {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .contact-line {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .contact-line a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-line a:hover { text-decoration: underline; }
+
+    .cta-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+    }
+    .cta-link:hover { background: #2f3da0; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--nav-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tomorrow&#8217;s Technology Today!</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="whoweare.html" class="active">Who We Are</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- GREEK KEY BORDER -->
+  <div class="greek-key-border" aria-hidden="true">
+    <svg width="100%" height="8" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="meander" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+          <path d="M 0,5 H 1 V 1 H 7 V 7 H 2 V 3 H 5 V 5 H 8"
+                fill="none" stroke="#1a1a1a" stroke-width="0.75"
+                stroke-linecap="square" stroke-linejoin="miter"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="8" fill="url(#meander)"/>
+    </svg>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+
+    <h1>Who We Are</h1>
+    <p class="page-sub">Designing Human + AI Operating Environments</p>
+
+    <!-- MISSION -->
+    <section>
+      <h2>Our Mission</h2>
+      <p>
+        Horizon Technologys designs Agentic Operating Environments: coherent systems in which
+        people and AI agents can work together continuously, purposefully, and safely.
+      </p>
+      <p>
+        Our work begins with a simple premise: adding capable AI agents does not eliminate the
+        need for systems architecture. It makes architecture more important.
+      </p>
+      <p>
+        Organizations still need to decide what humans should decide, what AI should handle,
+        how specialized agents should coordinate, where authoritative information should live,
+        how work and context persist over time, where verification belongs, and when automation
+        should stop and human judgment take over.
+      </p>
+      <p>
+        We help make those decisions deliberate, practical, governable...<br>aligned with the
+        work the organization is actually trying to accomplish.
+      </p>
+    </section>
+
+    <!-- WHAT WE DESIGN -->
+    <section>
+      <h2>What We Design</h2>
+      <p>
+        Most conversations about agentic AI focus on what an individual agent can do.
+      </p>
+      <p>
+        We focus on the larger architectural question: how multiple agents, humans, information,
+        workflows, authority, time, state, verification, and action work together as a system.
+      </p>
+      <p>
+        <strong>Agentic Operating Environment Design</strong> is the practice of designing that
+        larger environment so AI agents can perform meaningful ongoing work with defined
+        responsibilities, appropriate autonomy, durable handoffs, authoritative information,
+        verification mechanisms,<br>clear permission boundaries, and human decision points.
+      </p>
+      <p>
+        The objective is not to put AI everywhere. It is to put the right intelligence in the
+        right places... with the right information, authority, coordination, continuity, and
+        human judgment.
+      </p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Persistent Agentic Systems</h3>
+          <p>Design scheduled and event-driven work systems that can continue across runs, preserve context, and maintain coherent state over time.</p>
+        </div>
+        <div class="pillar">
+          <h3>Workflow, Roles, Authority &amp; Handoffs</h3>
+          <p>Define what specialized agents and people are responsible for, what they may decide, when work changes hands, and how exceptions are handled.</p>
+        </div>
+        <div class="pillar">
+          <h3>Knowledge, Information &amp; State Architecture</h3>
+          <p>Establish authoritative sources, durable context, and reliable information flow so agents and people operate from the right state of the system.</p>
+        </div>
+        <div class="pillar">
+          <h3>Governance, Verification &amp; Quality</h3>
+          <p>Build human authorization boundaries, verification gates, evaluation methods, and quality controls into the operating environment itself.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section>
+      <h2>Where We Work</h2>
+      <ul class="services-list">
+        <li>Agentic Operating Environment Design</li>
+        <li>Agentic AI Systems Architecture</li>
+        <li>Persistent AI Agent &amp; Automation Architecture</li>
+        <li>Agentic AI Workflow Orchestration</li>
+        <li>Agentic Workflow &amp; Process Design</li>
+        <li>AI Agent Roles, Authority &amp; Handoffs</li>
+        <li>Human + AI Operating Model Design</li>
+        <li>Knowledge &amp; Information Architecture</li>
+        <li>AI Governance &amp; Decision Architecture</li>
+        <li>Human-in-the-Loop Governance</li>
+        <li>AI Evaluation &amp; Quality Systems</li>
+        <li>AI Readiness &amp; Integration Strategy</li>
+        <li>AI Architecture Assessment &amp; Repair</li>
+        <li>AI Transformation &amp; Implementation Planning</li>
+        <li>Executive AI Advisory</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- PERSPECTIVE -->
+    <section>
+      <h2>The Horizon Perspective</h2>
+      <blockquote>
+        "The technology has changed. The architecture problem has not."
+        <span>— Robert E Miller, Founder &amp; Principal Consultant</span>
+      </blockquote>
+      <p>
+        For nearly three decades, Horizon Technologys has worked at the intersection of<br>people,
+        information, technology, workflow, and organizational change.
+      </p>
+      <p>
+        Agentic AI introduces extraordinary new capabilities, but the central systems questions
+        remain familiar: What are we trying to accomplish? Who or what should do the work? What
+        information is authoritative? Where does judgment belong? How do the parts coordinate?
+        What state must persist? What must be verified? What happens when something fails? How do
+        we know the system is working?
+      </p>
+      <p>
+        Our current work is informed by the practical design and refinement of persistent
+        multi-agent operating environments involving specialized roles, scheduled and
+        event-driven work, authoritative state, durable handoffs, verification gates,
+        permission boundaries, human authorization, and coordinating layers.
+      </p>
+      <p>
+        That systems perspective is the foundation we bring to<br>Agentic AI Systems Architecture
+        and AI Transformation today.
+      </p>
+    </section>
+
+    <!-- FOUNDER -->
+    <section>
+      <h2>Robert E Miller</h2>
+      <p>
+        Robert is a Systems Architect, Agentic AI Expert, and AI Transformation Consultant.
+        His work draws on decades of consulting across technology, communications, process,
+        usability,<br>organizational systems, and human-centered change.
+      </p>
+      <p>
+        He works at the architecture and operating-model layer: helping organizations decide
+        how human judgment, AI capability, information, workflow, governance, continuity, and
+        decision authority should fit together before technology choices harden into operating
+        reality.
+      </p>
+    </section>
+
+    <a href="contact.html" class="cta-link">Start a Conversation</a>
+
+    <hr>
+
+    <p class="signature">Robert E Miller</p>
+    <p class="contact-line">
+      Systems Architect &nbsp;·&nbsp; Agentic AI Expert &nbsp;·&nbsp; AI Transformation Consultant
+    </p>
+    <p class="contact-line">
+      <a href="mailto:robert@horizontks.com">robert@horizontks.com</a>
+      &nbsp;·&nbsp; 770.367.2327
+    </p>
+
+  </main>
+
+  <footer>
+    &copy; Horizon Technologys. All rights reserved.
+  </footer>
+
+</body>
+</html>
