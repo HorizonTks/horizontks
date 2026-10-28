@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://horizontks.com/</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://horizontks.com/reclaiming-ai.html</loc><lastmod>2026-10-19</lastmod></url>
@@ -9,4 +8,5 @@
   <url><loc>https://horizontks.com/whispering-alignment.html</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://horizontks.com/whoweare.html</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://horizontks.com/contact.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://horizontks.com/sitemap.html</loc><lastmod>2026-10-28</lastmod></url>
 </urlset>
