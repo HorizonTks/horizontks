@@ -94,7 +94,7 @@
     .btn-outline { border: 1.5px solid var(--horizon-green); color: var(--deep-green); background: transparent; }
     .paths {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-      max-width: 1160px; margin: 0 auto; padding: 0 20px 46px; width: 94%;
+      max-width: 1160px; margin: 0 auto; padding: 0 20px 46px; width: 100%;
     }
     .path { min-width: 0; background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--slate); padding: 22px 22px 20px; }
     .path h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.38rem; letter-spacing: 0.12em; font-weight: 400; }
@@ -131,15 +131,15 @@
     }
 
     /* Horizon blue-teal architectural frame, matching the primary CTA */
-    /* Visible framing belongs to the page itself, not to an outer background. */
+    /* Framed landing page matching approved reference */
     body { background: var(--mist); }
     .page-frame { width: 100%; max-width: none; margin: 0; background: var(--mist);
-      border-left: clamp(18px, 5vw, 76px) solid var(--horizon-blue);
-      border-right: clamp(18px, 5vw, 76px) solid var(--horizon-blue);
-      border-bottom: 28px solid var(--horizon-blue); }
+      border-left: clamp(20px, 8.3vw, 150px) solid var(--horizon-blue);
+      border-right: clamp(20px, 8.3vw, 150px) solid var(--horizon-blue);
+      border-bottom: 46px solid var(--horizon-blue); }
     .page-frame .band-white { background: var(--white); }
-    @media (max-width: 860px) { .page-frame { border-left-width: 14px; border-right-width: 14px; border-bottom-width: 18px; } }
-    @media (max-width: 480px) { .page-frame { border-left-width: 7px; border-right-width: 7px; border-bottom-width: 12px; } }
+    @media (max-width: 860px) { .page-frame { border-left-width: 14px; border-right-width: 14px; border-bottom-width: 24px; } }
+    @media (max-width: 480px) { .page-frame { border-left-width: 7px; border-right-width: 7px; border-bottom-width: 14px; } }
   </style>
 </head>
 <body>
@@ -176,7 +176,7 @@
     <h1>The technology has changed.<br /><em>The architecture problem has not.</em></h1>
     <p class="sub">Designing intelligent operating environments where people, systems, and AI work together with clarity and purpose.</p>
     <div class="cta-row">
-      <a class="btn btn-solid" href="#approach">Explore Our Approach</a>
+      <a class="btn btn-solid" href="our-approach.html">Explore Our Approach</a>
       <a class="btn btn-outline" href="work-with-horizon.html">Work With Horizon</a>
     </div>
   </header>
@@ -203,94 +203,6 @@
     </div>
   </div>
 
-  <section class="section band-white" id="approach">
-    <div class="section-inner">
-      <p class="eyebrow">Our Approach</p>
-      <h2>Capable agents are only part of the system.</h2>
-      <p>Organizations are adding AI to workflows, decisions, communications, and operations faster than they are designing how it all fits together. The harder problem is no longer how to use AI. It is how agents, people, information, authority, verification, and action should work together over time as one coherent operating environment.</p>
-      <p><strong>Horizon designs that environment:</strong> the right intelligence in the right places, with the right responsibilities, boundaries, coordination, and human judgment.</p>
-      <p>The return is practical: operations that hold together as AI use grows, decisions that stay accountable to named people, less fragmentation across tools and teams, and adoption that lasts because it was designed to.</p>
-      <figure class="diagram">
-        <svg width="680" height="238" viewBox="0 0 680 238" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: people, AI agents, and information and systems working within an operating environment grounded in human judgment and authority">
-          <g font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#192B3D" text-anchor="middle">
-            <rect x="10" y="10" width="200" height="56" fill="#FFFFFF" stroke="#192B3D" stroke-width="1.2"/>
-            <text x="110" y="45">People</text>
-            <rect x="240" y="10" width="200" height="56" fill="#FFFFFF" stroke="#192B3D" stroke-width="1.2"/>
-            <text x="340" y="45">AI Agents</text>
-            <rect x="470" y="10" width="200" height="56" fill="#FFFFFF" stroke="#192B3D" stroke-width="1.2"/>
-            <text x="570" y="45">Information &amp; Systems</text>
-          </g>
-          <g stroke="#192B3D" stroke-width="1.4">
-            <line x1="110" y1="66" x2="110" y2="104"/>
-            <line x1="340" y1="66" x2="340" y2="104"/>
-            <line x1="570" y1="66" x2="570" y2="104"/>
-          </g>
-          <rect x="60" y="104" width="560" height="60" fill="#FFFFFF" stroke="#192B3D" stroke-width="2"/>
-          <text x="340" y="130" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="17" fill="#192B3D">The Operating Environment</text>
-          <text x="340" y="152" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" fill="#41546A">Defined roles · Verification · Continuity · Durable handoffs</text>
-          <line x1="340" y1="164" x2="340" y2="192" stroke="#192B3D" stroke-width="1.4"/>
-          <rect x="170" y="192" width="340" height="38" fill="#192B3D"/>
-          <text x="340" y="217" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15.5" fill="#F4F7F5">Human Judgment &amp; Authority</text>
-        </svg>
-        <figcaption>The agent is one component. The value is in the relationships among all of them, and in who remains in authority.</figcaption>
-      </figure>
-      <p class="practice-line">Agentic Operating Environment Design · Agentic AI Systems Architecture · Human + AI Operating Models · Agent Roles, Authority &amp; Handoffs · Knowledge &amp; Information Architecture · Human-in-the-Loop Governance · AI Evaluation &amp; Quality Systems</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-inner">
-      <p class="eyebrow">What We Think</p>
-      <h2>Reclaiming AI</h2>
-      <p>Horizon publishes <strong>Reclaiming AI</strong>, a continuing series of essays on designing the human experience around artificial intelligence: what these systems should do, what they should never be asked to do, and how organizations keep judgment where it belongs.</p>
-      <p>The thinking and the practice inform each other. The essays are where the philosophy is tested in public.</p>
-      <a class="more" href="reclaiming-ai.html">Read Reclaiming AI →</a>
-    </div>
-  </section>
-
-  <section class="section band-sage">
-    <div class="section-inner">
-      <p class="eyebrow">Case Study · In Development</p>
-      <h2>One architecture, five websites.</h2>
-      <p>Horizon's own web presence is being rebuilt the way we design for clients: five distinct sites forming one family. They share a footer and component system, a design language, and a single canonical record of the publishing work they carry. Each was designed and built in sustained collaboration between people and AI agents.</p>
-      <p>The full case study, including what the process revealed about human and agent roles, is in development and will be published here.</p>
-    </div>
-  </section>
-
-  <section class="closing">
-    <h2>Exploring agentic AI in your organization?</h2>
-    <p>If you are moving beyond individual AI tools and asking how people, agents, workflows, information, and decision-making should actually work together over time, we welcome a conversation.</p>
-    <div class="cta-row">
-      <a class="btn btn-solid" href="mailto:robert@horizontks.com?subject=Conversation%20with%20Horizon">Start a Conversation</a>
-    </div>
-    <p class="signature">Robert E Miller</p>
-    <p class="contact-line">Systems Architect · Agentic AI Expert · AI Transformation Consultant</p>
-    <p class="contact-line"><a href="mailto:robert@horizontks.com">robert@horizontks.com</a> · 770.367.2327</p>
-  </section>
-
   </main>
-
-  <style>
-  .htks-footer { background: transparent; border-top: 1px solid rgba(0, 0, 0, 0.14); margin-top: 1rem; padding: 1.6rem 1rem 1.8rem; text-align: center; font-family: inherit; }
-  .htks-footer-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.4rem 2.2rem; margin: 0 0 0.9rem; border: 0; padding: 0; }
-  .htks-footer-link { display: inline-flex; align-items: center; line-height: 0; }
-  .htks-footer-link img { height: 40px; width: auto; display: block; }
-  .htks-footer-markham { line-height: 1; text-decoration: none; }
-  .htks-markham-word { font-family: Georgia, "Times New Roman", serif; font-size: 38px; font-weight: 700; line-height: 1; color: #192B3D; }
-  .htks-markham-dot { color: #A87940; }
-  .htks-host-horizontks .htks-item-horizon, .htks-host-markhamideas .htks-item-markham, .htks-host-theryehouse .htks-item-rye, .htks-host-remyrmiller .htks-item-remy, .htks-host-rguytano .htks-item-rguytano { display: none; }
-  .htks-footer-credit { margin: 0; font-size: 0.8rem; letter-spacing: 0.04em; opacity: 0.72; }
-  .htks-footer-copy { margin: 0.35rem 0 0; font-size: 0.8rem; letter-spacing: 0.04em; opacity: 0.72; }
-</style>
-<footer class="htks-footer htks-host-horizontks">
-  <nav class="htks-footer-row" aria-label="Web Mastering by Horizon Technologys">
-    <a class="htks-footer-link htks-item-horizon" href="https://horizontks.com/" title="Horizon Technologys"><img src="/horizon-logo-2026.png" alt="Horizon Technologys" height="40"></a>
-    <a class="htks-footer-link htks-footer-markham htks-item-markham" href="https://markhamideas.org/" title="Markham" aria-label="Markham"><span class="htks-markham-word" aria-hidden="true">M<span class="htks-markham-dot">.</span></span></a>
-    <a class="htks-footer-link htks-item-rye" href="https://theryehouse.com/" title="The Rye House"><img src="/rye-tree-clean.png" alt="The Rye House" height="40"></a>
-    <a class="htks-footer-link htks-item-remy" href="https://rremymiller.com/" title="R Remy Miller"><img src="/remy-spiral-logo.png" alt="R Remy Miller" height="40"></a><a class="htks-footer-link htks-item-rguytano" href="https://rguytano.com/" title="RGuytano"><img src="/rguytano-rg-logo.png" alt="RGuytano" height="40"></a><a class="htks-footer-link htks-item-substack" href="https://remy1miller.substack.com/" title="Substack: Welcome to my Neighborhood"><img src="/substack-glyph.png" alt="Substack" height="40"></a>
-  </nav>
-  <p class="htks-footer-credit">Web Mastering by Horizon Technologys</p>
-  <p class="htks-footer-copy">© Robert Eugene Miller. All Rights Reserved</p>
-</footer>
 </body>
 </html>
