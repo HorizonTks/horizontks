@@ -131,11 +131,15 @@
     }
 
     /* Horizon blue-teal architectural frame, matching the primary CTA */
-    body { background: var(--horizon-blue); }
-    .page-frame { width: calc(100% - 48px); max-width: 1240px; margin: 0 auto; background: var(--mist); }
+    /* Visible framing belongs to the page itself, not to an outer background. */
+    body { background: var(--mist); }
+    .page-frame { width: 100%; max-width: none; margin: 0; background: var(--mist);
+      border-left: clamp(18px, 5vw, 76px) solid var(--horizon-blue);
+      border-right: clamp(18px, 5vw, 76px) solid var(--horizon-blue);
+      border-bottom: 28px solid var(--horizon-blue); }
     .page-frame .band-white { background: var(--white); }
-    @media (max-width: 860px) { .page-frame { width: calc(100% - 24px); } }
-    @media (max-width: 480px) { .page-frame { width: calc(100% - 12px); } }
+    @media (max-width: 860px) { .page-frame { border-left-width: 14px; border-right-width: 14px; border-bottom-width: 18px; } }
+    @media (max-width: 480px) { .page-frame { border-left-width: 7px; border-right-width: 7px; border-bottom-width: 12px; } }
   </style>
 </head>
 <body>
