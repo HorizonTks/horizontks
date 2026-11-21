@@ -266,7 +266,14 @@
 .site-sticky-header nav,.site-sticky-header .site-nav{position:relative;top:auto}
 .site-sticky-header .greek-key-border{position:relative;z-index:1}
 </style>
-</head>
+<style>
+/* Horizon 2.0 consistent architectural frame */
+body { background: #F4F7F5; }
+.page-frame { width:100%; background:#F4F7F5; border-left:clamp(20px,8.3vw,150px) solid #245D78; border-right:clamp(20px,8.3vw,150px) solid #245D78; border-bottom:46px solid #245D78; }
+.page-frame > main { box-sizing:border-box; }
+@media(max-width:860px){.page-frame{border-left-width:14px;border-right-width:14px;border-bottom-width:24px}}
+@media(max-width:480px){.page-frame{border-left-width:7px;border-right-width:7px;border-bottom-width:14px}}
+</style></head>
 <body>
 
   <!-- NAV -->
@@ -298,7 +305,7 @@
   </div></div>
 
   <!-- MAIN -->
-  <main>
+  <div class="page-frame"><main>
 
     <h1>Start a Conversation</h1>
     <p class="page-sub"><i>
@@ -348,7 +355,7 @@
       <p style="font-size:0.85rem; color:var(--muted);">Founder &amp; Principal Consultant, Horizon Technologys</p>
     </div>
 
-  </main>
+  </main></div>
 
     <script>
     const form = document.getElementById('contactForm');
