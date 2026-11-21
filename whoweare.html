@@ -251,7 +251,14 @@
 .site-sticky-header nav,.site-sticky-header .site-nav{position:relative;top:auto}
 .site-sticky-header .greek-key-border{position:relative;z-index:1}
 </style>
-</head>
+<style>
+/* Horizon 2.0 consistent architectural frame */
+body { background: #F4F7F5; }
+.page-frame { width:100%; background:#F4F7F5; border-left:clamp(20px,8.3vw,150px) solid #245D78; border-right:clamp(20px,8.3vw,150px) solid #245D78; border-bottom:46px solid #245D78; }
+.page-frame > main { box-sizing:border-box; }
+@media(max-width:860px){.page-frame{border-left-width:14px;border-right-width:14px;border-bottom-width:24px}}
+@media(max-width:480px){.page-frame{border-left-width:7px;border-right-width:7px;border-bottom-width:14px}}
+</style></head>
 <body>
 
   <!-- NAV -->
@@ -283,7 +290,7 @@
   </div></div>
 
   <!-- MAIN -->
-  <main id="page-top">
+  <div class="page-frame"><main id="page-top">
 
     <h1>Who We Are</h1>
     <p class="page-sub">Designing Human + AI Operating Environments</p>
@@ -436,7 +443,7 @@
       &nbsp;·&nbsp; 770.367.2327
     </p>
 
-  <p class="htks-top"><a href="#page-top">↑ Top of page</a></p></main>
+  <p class="htks-top"><a href="#page-top">↑ Top of page</a></p></main></div>
   <style>
  .htks-top { margin: 20px 0 0; padding-top: 14px; border-top: 1px solid rgba(0, 0, 0, 0.14); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; } .htks-top a { color: inherit; opacity: 0.75; text-decoration: none; } .htks-top a:hover { text-decoration: underline; } .htks-footer { background: transparent; border-top: 1px solid rgba(0, 0, 0, 0.14); margin-top: 1rem; padding: 1.6rem 1rem 1.8rem; text-align: center; font-family: inherit; }
   .htks-footer-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.4rem 2.2rem; margin: 0 0 0.9rem; border: 0; padding: 0; }
