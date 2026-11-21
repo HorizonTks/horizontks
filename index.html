@@ -33,7 +33,10 @@
       --mist:      #F4F7F5;
       --slate:      #192B3D;
       --slate-soft: #41546A;
-      --bronze:     #A87940;
+      --bronze:     #28734E;
+      --horizon-blue: #245D78;
+      --horizon-green: #28734E;
+      --deep-green: #205D43;
       --sage:       #71806A;
       --sage-tint:  #EAF1ED;
       --line:       #D7E2DC;
@@ -59,13 +62,15 @@
       font-weight: 700; font-size: 1.12rem; color: var(--slate);
       text-decoration: none; letter-spacing: 0.01em; white-space: nowrap;
     }
-    .nav-brand span { color: var(--bronze); }
+    .nav-brand { color: var(--horizon-blue); }
+    .nav-brand span { color: var(--horizon-green); }
     .nav-links { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
     .nav-links a {
       color: var(--slate); text-decoration: none; font-size: 0.97rem;
       font-weight: 600; letter-spacing: 0.02em;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--bronze); }
+    .nav-links a:hover { color: var(--horizon-green); }
+    .nav-links a.active { color: var(--horizon-blue); text-decoration: underline; text-decoration-color: var(--horizon-green); text-decoration-thickness: 2px; text-underline-offset: 7px; }
     .greek-key-border { display: block; line-height: 0; width: 100%; background: var(--mist); }
     .hero { text-align: center; padding: 76px 24px 58px; max-width: 920px; margin: 0 auto; }
     .hero img.logo { width: 76px; height: 76px; border-radius: 6px; margin-bottom: 30px; }
@@ -77,15 +82,16 @@
       font-family: Georgia, 'Times New Roman', serif; font-weight: 400;
       font-size: 3.05rem; line-height: 1.16; margin: 20px 0 22px; color: var(--slate);
     }
-    .hero h1 em { color: var(--slate); }
+    .hero h1 em { color: var(--horizon-blue); }
+    .hero .eyebrow { color: var(--deep-green); letter-spacing: 0.16em; }
     .hero .sub { font-size: 1.16rem; color: var(--slate-soft); max-width: 660px; margin: 0 auto; }
     .cta-row { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-block; padding: 13px 28px; border-radius: 3px;
       text-decoration: none; font-weight: 600; letter-spacing: 0.02em; font-size: 1rem;
     }
-    .btn-solid { background: var(--slate); color: var(--white); }
-    .btn-outline { border: 1.5px solid var(--slate); color: var(--slate); background: transparent; }
+    .btn-solid { background: var(--horizon-blue); color: var(--white); }
+    .btn-outline { border: 1.5px solid var(--horizon-green); color: var(--deep-green); background: transparent; }
     .paths {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
       max-width: 1160px; margin: 0 auto; padding: 12px 24px 78px; width: 90%;
@@ -144,7 +150,7 @@
       <svg width="100%" height="8" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="meander" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
-            <path d="M 0,5 H 1 V 1 H 7 V 7 H 2 V 3 H 5 V 5 H 8" fill="none" stroke="#A87940" stroke-width="0.75" stroke-linecap="square" stroke-linejoin="miter"/>
+            <path d="M 0,5 H 1 V 1 H 7 V 7 H 2 V 3 H 5 V 5 H 8" fill="none" stroke="#28734E" stroke-width="0.75" stroke-linecap="square" stroke-linejoin="miter"/>
           </pattern>
         </defs>
         <rect width="100%" height="8" fill="url(#meander)"/>
