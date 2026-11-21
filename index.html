@@ -129,6 +129,13 @@
       .section { padding: 54px 20px; }
       .closing { padding: 56px 20px 52px; }
     }
+
+    /* Horizon blue-teal architectural frame, matching the primary CTA */
+    body { background: var(--horizon-blue); }
+    .page-frame { width: calc(100% - 48px); max-width: 1240px; margin: 0 auto; background: var(--mist); }
+    .page-frame .band-white { background: var(--white); }
+    @media (max-width: 860px) { .page-frame { width: calc(100% - 24px); } }
+    @media (max-width: 480px) { .page-frame { width: calc(100% - 12px); } }
   </style>
 </head>
 <body>
@@ -158,6 +165,7 @@
     </div>
   </div>
 
+  <main class="page-frame">
   <header class="hero">
     <img class="logo" src="HTS_Synergy.png" alt="Horizon Technologys logo" />
     <p class="eyebrow">Horizon Technologys · Human-Centered AI Architecture</p>
@@ -255,6 +263,8 @@
     <p class="contact-line">Systems Architect · Agentic AI Expert · AI Transformation Consultant</p>
     <p class="contact-line"><a href="mailto:robert@horizontks.com">robert@horizontks.com</a> · 770.367.2327</p>
   </section>
+
+  </main>
 
   <style>
   .htks-footer { background: transparent; border-top: 1px solid rgba(0, 0, 0, 0.14); margin-top: 1rem; padding: 1.6rem 1rem 1.8rem; text-align: center; font-family: inherit; }
